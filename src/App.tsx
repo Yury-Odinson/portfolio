@@ -1,27 +1,23 @@
-import React from 'react';
-import './App.css';
-import {LogosSkills} from "./components/LogosSkills";
+import React, {useState} from 'react';
+import {ThemeContext} from "./tools/store";
+import {Header} from "./components/Header";
+import {Main} from "./components/Main";
 
 function App() {
+
+    const [theme, setTheme] = useState<string>("light");
+
     return (
-        <div className="App">
+        <ThemeContext.Provider value={{theme, setTheme}}>
+            <div className="App">
+                <Header/>
+                <Main />
+                <footer>
+                    footer
+                </footer>
+            </div>
+        </ThemeContext.Provider>
 
-            <header>
-                header
-            </header>
-
-            <main>
-                <div>
-                    <p>main</p>
-                    <LogosSkills/>
-                </div>
-            </main>
-
-            <footer>
-                footer
-            </footer>
-
-        </div>
     );
 }
 

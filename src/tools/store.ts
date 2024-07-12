@@ -1,3 +1,13 @@
+import React, {Dispatch, SetStateAction} from "react";
+import {ThemeContextType} from "./types";
+
+
+export const ThemeContext = React.createContext<ThemeContextType>({
+    theme: "light",
+    setTheme: (): void => {
+    }
+})
+
 export const logosData = [
     {
         link: "https://sun9-75.userapi.com/impg/au4kEXScyxNSRVRE31AdEI2A1zA3TgNxkfSrDg/k7B7UPahnhw.jpg?size=256x256&quality=95&sign=7acbb22d1b1b459332e6e879a638cee1&type=album",
