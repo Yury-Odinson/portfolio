@@ -9,7 +9,7 @@ export const Main = () => {
     const themeCtx = useContext(ThemeContext);
 
     useEffect(() => {
-        themeCtx.theme === "light" ? setClassName("") : setClassName("dark")
+        themeCtx.theme === "light" ? setClassName("") : setClassName("darkBg wClr")
     }, [themeCtx.theme])
 
     return (
