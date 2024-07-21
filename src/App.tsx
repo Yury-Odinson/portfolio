@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import {LanguageContext, ThemeContext} from "./tools/store";
+import {Header} from "./components/Header";
+import {BrowserRouter} from "react-router-dom";
+import {MainContent} from "./components/MainContent";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [theme, setTheme] = useState<string>("light");
+    const [lang, setLang] = useState("en");
+
+    return (
+        <ThemeContext.Provider value={{theme, setTheme}}>
+            <LanguageContext.Provider value={{lang, setLang}}>
+                <BrowserRouter>
+                    <div className="App">
+                        <Header/>
+                        <MainContent/>
+                        <footer>
+                            footer
+                        </footer>
+                    </div>
+                </BrowserRouter>
+            </LanguageContext.Provider>
+        </ThemeContext.Provider>
+    );
 }
 
 export default App;
