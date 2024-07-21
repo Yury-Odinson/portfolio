@@ -1,7 +1,7 @@
 export const AboutMe = () => {
     return (
-        <main>
+        <div>
             <p>About me</p>
-        </main>
+        </div>
     );
 };

@@ -1,12 +1,18 @@
-import React, {Dispatch, SetStateAction} from "react";
-import {ThemeContextType} from "./types";
+import React from "react";
+import {LangContextType, ThemeContextType} from "./types";
 
 
 export const ThemeContext = React.createContext<ThemeContextType>({
     theme: "light",
     setTheme: (): void => {
     }
-})
+});
+
+export const LanguageContext = React.createContext<LangContextType>({
+    lang: "en",
+    setLang: (): void => {
+    }
+});
 
 export const logosData = [
     {

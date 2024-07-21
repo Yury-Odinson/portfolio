@@ -24,6 +24,7 @@
 .toggle:before,
 .toggle:checked:after {
     transition-timing-function: ease-out;
+    background-color: #F0E250FF;
 }
 
 .toggle {

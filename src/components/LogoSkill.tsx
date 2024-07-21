@@ -1,9 +1,5 @@
 import {useEffect, useState} from "react";
-
-type LogoSkillProps = {
-    src: string,
-    alt: string
-}
+import {LogoSkillProps} from "../tools/types";
 
 export const LogoSkill = ({src, alt}: LogoSkillProps) => {
 
@@ -15,7 +11,7 @@ export const LogoSkill = ({src, alt}: LogoSkillProps) => {
                 const response = await fetch(src);
                 if (response.ok) {
                     const imageBlob = await response.blob();
-                    setImgSrc(URL.createObjectURL(imageBlob))
+                    setImgSrc(URL.createObjectURL(imageBlob));
                 }
             } catch (error) {
                 console.error(error);

@@ -1,23 +1,28 @@
 import React, {useState} from 'react';
-import {ThemeContext} from "./tools/store";
+import {LanguageContext, ThemeContext} from "./tools/store";
 import {Header} from "./components/Header";
-import {Main} from "./components/Main";
+import {BrowserRouter} from "react-router-dom";
+import {MainContent} from "./components/MainContent";
 
 function App() {
 
     const [theme, setTheme] = useState<string>("light");
+    const [lang, setLang] = useState("en");
 
     return (
         <ThemeContext.Provider value={{theme, setTheme}}>
-            <div className="App">
-                <Header/>
-                <Main />
-                <footer>
-                    footer
-                </footer>
-            </div>
+            <LanguageContext.Provider value={{lang, setLang}}>
+                <BrowserRouter>
+                    <div className="App">
+                        <Header/>
+                        <MainContent/>
+                        <footer>
+                            footer
+                        </footer>
+                    </div>
+                </BrowserRouter>
+            </LanguageContext.Provider>
         </ThemeContext.Provider>
-
     );
 }
 

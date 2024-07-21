@@ -24,16 +24,26 @@ code {
     monospace;
 }
 
+button {
+    cursor: pointer;
+}
 
 header {
-    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    /*height: 40px;*/
+    height: 10vh;
     box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 }
 
 nav {
     margin: 0 auto;
+    padding: 2vh;
+    flex-grow: 1;
     display: flex;
     justify-content: space-between;
+    width: auto;
     max-width: 1200px;
 }
 
@@ -50,11 +60,11 @@ nav > div {
     font-size: 1.2rem;
     font-weight: 100;
     text-align: left;
-    cursor: pointer;
     transition: 0.2s;
 }
 
 .nav-ctx {
+    padding: 0 2vh;
     display: flex;
     align-items: center;
 }
@@ -62,6 +72,13 @@ nav > div {
 .nav-ctx > p {
     font-size: 0.7rem;
     font-weight: 100;
+    text-align: right;
+    width: 12vh;
+}
+
+.nav-ctx__btn {
+    background-color: #ffffff00;
+    border: none;
 }
 
 .checkbox {
@@ -76,8 +93,17 @@ nav > div {
 
 .wrapper {
     margin: 0 auto;
+    padding: 2vh;
     max-width: 1200px;
     height: 100vw;
+}
+
+.main-info {
+    padding: 10vh;
+    display: flex;
+    justify-content: center;
+    gap: 10vh;
+    outline: 1px solid red;
 }
 
 footer {
@@ -103,10 +129,6 @@ footer {
     min-height: 64px;
 }
 
-.skills > p {
-    /*border-right: 1px solid red;*/
-}
-
 .loader {
     width: 48px;
     height: 48px;
@@ -118,8 +140,13 @@ footer {
     animation: rotation 1s linear infinite;
 }
 
-.dark {
+.darkBg {
     background-color: #646464;
+    color: #fff;
+}
+
+/* special for buttons */
+.wClr {
     color: #fff;
 }
 

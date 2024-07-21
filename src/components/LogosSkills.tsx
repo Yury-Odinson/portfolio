@@ -6,7 +6,7 @@ export const LogosSkills = () => {
         <div className="skills">
             <p>my skills </p>
             {logosData.map(e => (
-                <LogoSkill src={e.link} alt={e.alt}/>
+                <LogoSkill src={e.link} alt={e.alt} key={e.alt}/>
             ))}
         </div>
     );
